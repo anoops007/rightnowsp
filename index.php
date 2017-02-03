@@ -11,12 +11,14 @@ if ($hub_verify_token === $verify_token) {
     echo $challenge;
 }
 
-echo '<pre>';
+
 file_put_contents("fb.txt",file_get_contents("php://input"));
 
 $fb=file_get_contents("fb.txt");
-
+echo '<pre>';
 $input = json_decode($fb, true);
+
+echo $input;
 $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
 $message = $input['entry'][0]['messaging'][0]['message']['text'];
 $message_to_reply = '';
