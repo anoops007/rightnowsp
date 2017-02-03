@@ -23,7 +23,7 @@ $options=array(
 	'method'=>'POST',
 	'content'=>json_encode($data),
 	'header'=>"Content-Type: application/json\n"
-	);
+	)
 );
 
 
