@@ -1,10 +1,5 @@
 <?php
-/**
- * Webhook for Time Bot- Facebook Messenger Bot
- * User: adnan
- * Date: 24/04/16
- * Time: 3:26 PM
- */
+
 $access_token = "EAAZAvbvlzWXQBAHokKUMAL2FonFd8iaqZAhS0Xj1vZBCsCjvquwv95npzzJc9o3nZC3ZBHgZBAxNS0ETVEiHbG0ILwHXFuZCrYAaZB55ZB6MlrZAS4w18x7ZBFTuLRDR4YNGfFRLEKaFNVMQkZB0kXTqVUP9dWwwiwPr0xYchceeoVCyK77w7Aw8aRoC";
 $verify_token = "vijay";
 $hub_verify_token = null;
@@ -15,7 +10,12 @@ if(isset($_REQUEST['hub_challenge'])) {
 if ($hub_verify_token === $verify_token) {
     echo $challenge;
 }
-$input = json_decode(file_get_contents('php://input'), true);
+
+file_put_contents("fb.txt",file_get_contents("php://input"));
+
+$fb=file_get_contents("fb.txt");
+
+$input = json_decode($fb, true);
 $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
 $message = $input['entry'][0]['messaging'][0]['message']['text'];
 $message_to_reply = '';
