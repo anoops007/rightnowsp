@@ -1,5 +1,12 @@
 <?php
 
+$challenge = $_REQUEST['hub_challenge'];
+$verify_token = $_REQUEST['hub_verify_token'];
+
+// Set this Verify Token Value on your Facebook App 
+if ($verify_token === 'vijay') {
+  echo $challenge;
+}
 
 //print_r($_GET["hub_challenge"]);
 
@@ -25,4 +32,8 @@ $options=array(
 	)
 );
 $context=stream_context_create($options);
-file_get_contents("https://graph.facebook.com/v2.6/me/messages?access_token=$token",false,$context);
+file_get_contents("https://graph.facebook.com/v2.6/me/messages?access_token=$token",false,ll);
+
+if(!empty($fb['entry'][0]['messaging'][0]['message'])){
+  $result = curl_exec($ch);
+}
