@@ -1,6 +1,7 @@
 <?php
 
-$access_token = "EAAJa5MZBCPRYBAO9PhC02qdumbgi8CYuSGiogQVsq17QyZAZBi00qTyZAZC4ZABBeRdsSNH6dVnjx5qoQI1I0gGyH0xoy709V7XpHHRWsUVtv66CmwBqIF1FLS1ZAp8wNsD9AXToYYkgT7Qc7sApWgJOqDYmn2L2QLyMZBEvoZBRNOQZDZD";
+$access_token = "EAAJa5MZBCPRYBAAphzZB6XkMq2jmIDPs9docfHDlhEMp9ZAmeGkNFGoRZArKgEuM7QhVd56XlvSVjmP0jEqEjOYW0Y0iLT08s3tsw7zfhPMxQJ01XEV3Qf62kepeb0ZCADh5vpvBNssynXB24gC0ui0iXXDHwc4ZBoafoWCo7SlQZDZD";
+
 $verify_token = "vijay";
 $hub_verify_token = null;
 if(isset($_REQUEST['hub_challenge'])) {
