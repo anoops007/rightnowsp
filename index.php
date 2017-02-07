@@ -16,10 +16,9 @@ if ($hub_verify_token === $verify_token) {
 file_put_contents("fb.txt",file_get_contents("php://input"));
 
 $fb=file_get_contents("fb.txt");
-echo '<pre>';
+
 $input = json_decode($fb, true);
 
-echo $input;
 $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
 $message = $input['entry'][0]['messaging'][0]['message']['text'];
 $message_to_reply = '';
@@ -62,4 +61,34 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 if(!empty($input['entry'][0]['messaging'][0]['message'])){
     $result = curl_exec($ch);
 }
+?>
+
+<html>
+    <head>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    Message:
+                </td>
+                <td>
+                    <?php echo $message; ?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Reply:
+                </td>
+                <td>
+                    <input type="text" />
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+
+
+
 
