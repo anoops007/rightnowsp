@@ -2,7 +2,7 @@
 
 //echo "hi";
 $rep=$_POST["reply"];
-echo $rep;
+//echo $rep;
 $access_token = "EAAJa5MZBCPRYBAEKVRnxyN60Bbw4TzUTJCQLrnaOcS2Wt5oS6khZBCBcp6uybTEzPbsnDzlgCd6MVjoiL4JeE0ZAxU79gJvJn8236TUZBpvZBNzGD7HfzPvPZBZBEQP3UI18bXZAGz6Hy9s9aUOZA7VNlE9g8fiAtqzOqRKBZARHi3YwZDZD";
 //echo $access_token;
 $verify_token = "vijay";
@@ -37,7 +37,7 @@ if(preg_match('[time|current time|now]', strtolower($message))) {
         $message_to_reply = $result;
     }
 } else {
-    $message_to_reply = 'Huh! what do you mean?';
+    $message_to_reply = $rep;
 }
 //API Url
 $url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$access_token;
