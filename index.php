@@ -1,8 +1,9 @@
 <?php
 
 //echo "hi";
-
-/*$access_token = "EAAJa5MZBCPRYBAEKVRnxyN60Bbw4TzUTJCQLrnaOcS2Wt5oS6khZBCBcp6uybTEzPbsnDzlgCd6MVjoiL4JeE0ZAxU79gJvJn8236TUZBpvZBNzGD7HfzPvPZBZBEQP3UI18bXZAGz6Hy9s9aUOZA7VNlE9g8fiAtqzOqRKBZARHi3YwZDZD";
+$rep=$_POST["reply"];
+echo $rep;
+$access_token = "EAAJa5MZBCPRYBAEKVRnxyN60Bbw4TzUTJCQLrnaOcS2Wt5oS6khZBCBcp6uybTEzPbsnDzlgCd6MVjoiL4JeE0ZAxU79gJvJn8236TUZBpvZBNzGD7HfzPvPZBZBEQP3UI18bXZAGz6Hy9s9aUOZA7VNlE9g8fiAtqzOqRKBZARHi3YwZDZD";
 //echo $access_token;
 $verify_token = "vijay";
 $hub_verify_token = null;
@@ -13,17 +14,15 @@ if(isset($_REQUEST['hub_challenge'])) {
 }
 if ($hub_verify_token === $verify_token) {
     echo $challenge;
-}*/
+}
 
 
 file_put_contents("fb.txt",file_get_contents("php://input"));
 
 $fb=file_get_contents("fb.txt");
-echo $fb;
+
 $input = json_decode($fb, true);
 
-
-die();
 $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
 $message = $input['entry'][0]['messaging'][0]['message']['text'];
 $message_to_reply = '';
@@ -66,4 +65,12 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 if(!empty($input['entry'][0]['messaging'][0]['message'])){
     $result = curl_exec($ch);
 }
-
+?>
+<html>
+    <body>
+        <form method="POST" action="">
+            <input type="text" name="reply" />
+            <input type="submit" value="Reply" />
+        </form>
+    </body>    
+</html>
