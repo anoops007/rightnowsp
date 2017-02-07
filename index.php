@@ -2,7 +2,7 @@
 
 //echo "hi";
 
-$access_token = "EAAJa5MZBCPRYBAEKVRnxyN60Bbw4TzUTJCQLrnaOcS2Wt5oS6khZBCBcp6uybTEzPbsnDzlgCd6MVjoiL4JeE0ZAxU79gJvJn8236TUZBpvZBNzGD7HfzPvPZBZBEQP3UI18bXZAGz6Hy9s9aUOZA7VNlE9g8fiAtqzOqRKBZARHi3YwZDZD";
+/*$access_token = "EAAJa5MZBCPRYBAEKVRnxyN60Bbw4TzUTJCQLrnaOcS2Wt5oS6khZBCBcp6uybTEzPbsnDzlgCd6MVjoiL4JeE0ZAxU79gJvJn8236TUZBpvZBNzGD7HfzPvPZBZBEQP3UI18bXZAGz6Hy9s9aUOZA7VNlE9g8fiAtqzOqRKBZARHi3YwZDZD";
 //echo $access_token;
 $verify_token = "vijay";
 $hub_verify_token = null;
@@ -13,15 +13,15 @@ if(isset($_REQUEST['hub_challenge'])) {
 }
 if ($hub_verify_token === $verify_token) {
     echo $challenge;
-}
+}*/
 
 
 file_put_contents("fb.txt",file_get_contents("php://input"));
 
 $fb=file_get_contents("fb.txt");
-echo $fb;
+
 $input = json_decode($fb, true);
-print_r($input);
+
 
 die();
 $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
