@@ -1,7 +1,6 @@
 <?php
 
 //echo "hi";
-$rep=$_POST["reply"];
 //echo $rep;
 $access_token = "EAAJa5MZBCPRYBAEKVRnxyN60Bbw4TzUTJCQLrnaOcS2Wt5oS6khZBCBcp6uybTEzPbsnDzlgCd6MVjoiL4JeE0ZAxU79gJvJn8236TUZBpvZBNzGD7HfzPvPZBZBEQP3UI18bXZAGz6Hy9s9aUOZA7VNlE9g8fiAtqzOqRKBZARHi3YwZDZD";
 //echo $access_token;
@@ -37,7 +36,7 @@ if(preg_match('[time|current time|now]', strtolower($message))) {
         $message_to_reply = $result;
     }
 } else {
-    $message_to_reply = $rep;
+    $message_to_reply = "hello nice to meet you!";
 }
 //API Url
 $url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$access_token;
@@ -66,11 +65,3 @@ if(!empty($input['entry'][0]['messaging'][0]['message'])){
     $result = curl_exec($ch);
 }
 ?>
-<html>
-    <body>
-        <form metho="POST" action="">
-            <input type="text" name="reply" />
-            <input type="submit" value="Reply" />
-        </form>
-    </body>    
-</html>
