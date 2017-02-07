@@ -7,13 +7,13 @@ $access_token = "EAAJa5MZBCPRYBAEKVRnxyN60Bbw4TzUTJCQLrnaOcS2Wt5oS6khZBCBcp6uybT
 $verify_token = "vijay";
 $hub_verify_token = null;
 
-/*if(isset($_REQUEST['hub_challenge'])) {
+if(isset($_REQUEST['hub_challenge'])) {
     $challenge = $_REQUEST['hub_challenge'];
     $hub_verify_token = $_REQUEST['hub_verify_token'];
 }
 if ($hub_verify_token === $verify_token) {
     echo $challenge;
-}*/
+}
 
 
 file_put_contents("fb.txt",file_get_contents("php://input"));
@@ -52,6 +52,7 @@ $jsonData = '{
         "text":"'.$message_to_reply.'"
     }
 }';
+
 //Encode the array into JSON.
 $jsonDataEncoded = $jsonData;
 //Tell cURL that we want to send a POST request.
