@@ -18,12 +18,12 @@ file_put_contents("fb.txt",file_get_contents("php://input"));
 $fb=file_get_contents("fb.txt");
 
 $input = json_decode($fb, true);
-
+echo $fb;
 $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
 $message = $input['entry'][0]['messaging'][0]['message']['text'];
 $message_to_reply = '';
 
-echo $sender;
+
 /**
  * Some Basic rules to validate incoming messages
  */
