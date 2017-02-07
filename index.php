@@ -26,6 +26,7 @@ print_r($input);
 $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
 $message = $input['entry'][0]['messaging'][0]['message']['text'];
 $message_to_reply = '';
+$idd=$sender;
 /**
  * Some Basic rules to validate incoming messages
  */
@@ -66,4 +67,5 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 if(!empty($input['entry'][0]['messaging'][0]['message'])){
     $result = curl_exec($ch);
 }
+echo $idd;
 
