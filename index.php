@@ -1,9 +1,9 @@
 <?php
 
-echo "hi";
+//echo "hi";
 
 $access_token = "EAAJa5MZBCPRYBAEKVRnxyN60Bbw4TzUTJCQLrnaOcS2Wt5oS6khZBCBcp6uybTEzPbsnDzlgCd6MVjoiL4JeE0ZAxU79gJvJn8236TUZBpvZBNzGD7HfzPvPZBZBEQP3UI18bXZAGz6Hy9s9aUOZA7VNlE9g8fiAtqzOqRKBZARHi3YwZDZD";
-
+echo $access_token;
 $verify_token = "vijay";
 $hub_verify_token = null;
 if(isset($_REQUEST['hub_challenge'])) {
