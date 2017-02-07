@@ -23,7 +23,7 @@ $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
 $message = $input['entry'][0]['messaging'][0]['message']['text'];
 $message_to_reply = '';
 
-echo $message;
+echo $sender;
 /**
  * Some Basic rules to validate incoming messages
  */
