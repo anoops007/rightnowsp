@@ -68,9 +68,9 @@ if(!empty($input['entry'][0]['messaging'][0]['message'])){
 ?>
 <html>
     <body>
-        
+        <form metho="POST" action="">
             <input type="text" name="reply" />
             <input type="submit" value="Reply" />
-       
+        </form>
     </body>    
 </html>
