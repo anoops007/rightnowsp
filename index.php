@@ -6,21 +6,20 @@ $access_token = "EAAJa5MZBCPRYBAEKVRnxyN60Bbw4TzUTJCQLrnaOcS2Wt5oS6khZBCBcp6uybT
 //echo $access_token;
 $verify_token = "vijay";
 $hub_verify_token = null;
-echo $_REQUEST['hub_challenge'];
 
-if(isset($_REQUEST['hub_challenge'])) {
+/*if(isset($_REQUEST['hub_challenge'])) {
     $challenge = $_REQUEST['hub_challenge'];
     $hub_verify_token = $_REQUEST['hub_verify_token'];
 }
 if ($hub_verify_token === $verify_token) {
     echo $challenge;
-}
+}*/
 
 
 file_put_contents("fb.txt",file_get_contents("php://input"));
 
 $fb=file_get_contents("fb.txt");
-echo '<pre>';
+echo $fb;
 $input = json_decode($fb, true);
 print_r($input);
 
