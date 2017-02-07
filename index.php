@@ -22,6 +22,8 @@ $input = json_decode($fb, true);
 $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
 $message = $input['entry'][0]['messaging'][0]['message']['text'];
 $message_to_reply = '';
+
+echo $message;
 /**
  * Some Basic rules to validate incoming messages
  */
